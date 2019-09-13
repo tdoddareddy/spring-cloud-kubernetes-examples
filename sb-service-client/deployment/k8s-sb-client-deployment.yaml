@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sb-client-deployment
+  labels:
+    lang: java
+    type: frontend
+    app: sb-client
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sb-client
+  template:
+    metadata:
+      labels:
+        app: sb-client
+    spec:
+      containers:
+      - name: sb-client
+        image: tdoddareddy/kube-sbservice-client
+        ports:
+        - containerPort: 8080

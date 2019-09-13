@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:mysql://mysql-single-node-release:3306/greetingdb
+    username: root
+    password: dSINYVNcQ7

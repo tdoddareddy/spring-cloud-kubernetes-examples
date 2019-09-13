@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-helloworld-deployment
+  labels:
+    lang: java
+    type: frontend
+    app: kube-helloworld
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kube-helloworld
+  template:
+    metadata:
+      labels:
+        app: kube-helloworld
+    spec:
+      containers:
+      - name: kube-helloworld
+        image: tdoddareddy/kube-helloworld
+        ports:
+        - containerPort: 8080

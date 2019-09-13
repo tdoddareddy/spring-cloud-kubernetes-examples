@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: sb-service-client-scs
+  cloud:
+    config:
+      uri: http://configserver-service:8888/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eurekaserver-service:8761/eureka/
+    instance:
+      instanceId: ${spring.application.name}:${random.value}
+      preferIpAddress: true
